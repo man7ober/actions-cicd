@@ -1,0 +1,5 @@
+services:
+  app:
+    image: man7ober/node-farming:latest
+    ports:
+      - '80:8000'
