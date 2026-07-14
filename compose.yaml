@@ -1,5 +1,6 @@
 services:
   app:
     image: man7ober/node-farming:latest
+    container_name: 'node-farming'
     ports:
       - '80:8000'
