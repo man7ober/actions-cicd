@@ -1,2 +1,2 @@
 # Github Actions
-## Deploy the node farming app on AWS
+## Deploy a web app on AWS using TerraForm and Github Actions
