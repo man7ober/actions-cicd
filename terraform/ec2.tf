@@ -47,15 +47,14 @@ resource "aws_instance" "my_instance" {
     private_key = file(var.aws_key_pairs)
   }
 
-  provisioner "remote-exec" {
-    inline = [
-      "sudo yum update -y",
-      "sudo yum install -y docker",
-      "sudo systemctl enable docker",
-      "sudo systemctl start docker",
-      "sudo usermod -aG docker ec2-user"
-    ]
-  }
+  user_data = <<-EOF
+              #!/bin/bash
+              yum update -y
+              yum install -y docker
+              systemctl enable docker
+              systemctl start docker
+              usermod -aG docker ec2-user
+              EOF
 
   tags = {
     name = "WEB-SERVER"
