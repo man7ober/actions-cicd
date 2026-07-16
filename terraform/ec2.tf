@@ -49,9 +49,11 @@ resource "aws_instance" "my_instance" {
 
   provisioner "remote-exec" {
     inline = [
-      "sudo yum install httpd -y",
-      "sudo service httpd start",
-      "echo Connected to ${self.private_ip} | sudo tee /var/www/html/index.html"
+      "sudo yum update -y",
+      "sudo yum install -y docker",
+      "sudo systemctl enable docker",
+      "sudo systemctl start docker",
+      "sudo usermod -aG docker ec2-user"
     ]
   }
 
