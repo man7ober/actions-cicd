@@ -1,9 +1,6 @@
 name: 'Deploy to AWS'
 
 on:
-  # manual trigger
-  workflow_dispatch:
-
   # push trigger
   push:
     branches:

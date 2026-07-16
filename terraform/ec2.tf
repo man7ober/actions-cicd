@@ -39,22 +39,7 @@ resource "aws_instance" "my_instance" {
   instance_type          = "t3.micro"
   vpc_security_group_ids = [aws_security_group.my_sg.id]
   subnet_id              = data.aws_subnets.default_subnets.ids[1]
-
-  connection {
-    type        = "ssh"
-    host        = self.public_ip
-    user        = "ec2-user"
-    private_key = file(var.aws_key_pairs)
-  }
-
-  user_data = <<-EOF
-              #!/bin/bash
-              yum update -y
-              yum install -y docker
-              systemctl enable docker
-              systemctl start docker
-              usermod -aG docker ec2-user
-              EOF
+  user_data              = file("${path.module}/userdata.sh")
 
   tags = {
     name = "WEB-SERVER"
