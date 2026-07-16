@@ -1,8 +1,10 @@
 name: 'Deploy to AWS'
 
 on:
-  # manual trigger
-  workflow_dispatch:
+  # push trigger
+  push:
+    branches:
+      - master
 
 jobs:
   # Docker build and push
