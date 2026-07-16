@@ -1,0 +1,3 @@
+.prettierrc
+.terraform/
+.terraform.lock.hcl

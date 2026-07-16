@@ -1,9 +1,0 @@
-# name: 'Node Farming'
-
-# on:
-#   push:
-#     branches: ['master']
-#     paths-ignore:
-#       - 'Readme.md'
-
-# jobs
