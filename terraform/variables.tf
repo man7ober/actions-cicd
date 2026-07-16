@@ -1,3 +1,3 @@
 variable "aws_key_pairs" {
-  default = "~/.ssh/my-key-pair.pem"
+  default = "ec2/my-key-pair.pem"
 }
