@@ -1,0 +1,7 @@
+# Run locally
+docker compose up
+docker compose down
+
+# Run on Github / Actions
+Auto / Manual trigger Deploy to AWS workflow
+Manually trigger Destroy on AWS workflow
