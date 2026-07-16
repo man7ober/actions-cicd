@@ -1,4 +1,4 @@
-name: 'Infrastructure Provisioning'
+name: 'Create EC2 on AWS'
 
 on:
   workflow_dispatch:
